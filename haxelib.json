@@ -1,11 +1,11 @@
 {
-	"name": HxBigIO
-	"url" : "https://github.com/Dimensionscape-LLC/HxBigIO",
+	"name": "hxbigio",
+	"url" : "https://github.com/dimensionscape-llc/hxbigio",
 	"license": "MIT",
-	"tags": ["buffer", "bytes", "64-bit", "64bit", "bigbuffer", "bigbytes", "io","binary", "bytebrray", "file", "filesystem"],
-    "description": "HxBigIO is a small library intended to allow manipulation of larger buffers using 64 bit lengths.",
-	"version": "0.0.3",
+	"tags": [ "buffer", "bytes", "64-bit", "64bit", "bigbuffer", "bigbytes", "io","binary", "bytebrray", "file", "filesystem" ],
+	"description": "HxBigIO is a small library intended to allow manipulation of larger buffers using 64 bit lengths.",
+	"version": "0.0.4",
 	"classPath": "src/",
-	"releasenote": "Initial haxelib release.",
+	"releasenote": "Fix `fromFile` for small files"
 	"contributors": [ "Dimensionscape" ]
 }
