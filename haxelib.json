@@ -6,6 +6,6 @@
 	"description": "HxBigIO is a small library intended to allow manipulation of larger buffers using 64 bit lengths.",
 	"version": "0.0.4",
 	"classPath": "src/",
-	"releasenote": "Fix `fromFile` for small files"
+	"releasenote": "Fix `fromFile` for small files",
 	"contributors": [ "Dimensionscape" ]
 }
