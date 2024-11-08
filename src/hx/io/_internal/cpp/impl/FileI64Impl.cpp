@@ -103,7 +103,7 @@ void file_error(const char *msg, String inName)
 	hx::Throw(err);
 }
 
-Array<Array<unsigned char>> file_contents_big_bytes(String name)
+Array<Dynamic> file_contents_big_bytes(String name)
 {
 	hx::strbuf buf;
 	#ifdef NEKO_WINDOWS
@@ -218,20 +218,21 @@ Array<Array<unsigned char>> file_contents_big_bytes(String name)
 	}
 	else
 	{
+		std::cout << "0" << std::endl;
 		//////////////LESS THAN MAX VALUE/////////////
 		Array<unsigned char> buffer = Array_obj<unsigned char>::__new(len, len);
 
 		hx::EnterGCFreeZone();
 		if (len)
 		{
+			std::cout << "1" << std::endl;
 			char *dest = reinterpret_cast<char*>(&buffer[0]);
 			int p = 0;
 
-			std::cout << len << std::endl;
-
-			while (currentLen > 0)
-			{
-
+			std::cout << currentLen << std::endl;
+			//while (currentLen > 0)
+			//{
+				std::cout << "2" << std::endl;
 				POSIX_LABEL(file_contents1);
 				int d = fread(dest + p, 1, len, file);
 				if (d == 0 && !feof(file))
@@ -244,7 +245,7 @@ Array<Array<unsigned char>> file_contents_big_bytes(String name)
 					HANDLE_FINTR(file, file_contents1);
 					fclose(file);
 					file_error("file_contents", name);
-				}
+				//}
 
 				p += d;
 				len -= d;

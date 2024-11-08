@@ -22,10 +22,10 @@ class BigBytes
 	#if HXCPP_M64
 	public static function fromFile(path:String):BigBytes
 	{
-		var data:Array<Dynamic> = NativeFileI64.file_get_content_bytes(path);
-		var bb:BigBytes = null;
-		
-		if (data[0] == null)
+		var data = NativeFileI64.file_get_content_bytes(path);
+		var bb:BigBytes = null;				
+			
+		if (data[0][0] == null)
 		{
 			bb = new BigBytes(data.length);
 			bb._setBlockData(0, data);
